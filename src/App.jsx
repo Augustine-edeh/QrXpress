@@ -1,4 +1,5 @@
-import Header from "./Components/Header";
+import Header from "./Components/UI/Header";
+import Footer from "./Components/UI/Footer";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           </button>
         </div>
       </main>
+      <Footer />
     </>
   );
 };
