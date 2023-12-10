@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <header className="2xl:container 2xl:mx-auto flex items-center space-x-3 rounded shadow-lg py-5 px-7">
+    <header className="fixed right-0 left-0 2xl:container 2xl:mx-auto flex items-center space-x-3 rounded shadow-lg py-5 px-7 bg-white">
       <svg
         className="cursor-pointer"
         width="34"
