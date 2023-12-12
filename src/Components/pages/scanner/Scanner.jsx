@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Html5Qrcode } from "html5-qrcode";
 import { Link } from "react-router-dom";
-import Button from "../Button";
+import Button from "../../UI/Button";
 
 const Scanner = () => {
   useEffect(() => {
