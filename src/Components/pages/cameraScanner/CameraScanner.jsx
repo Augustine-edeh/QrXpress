@@ -10,6 +10,7 @@ const Scanner = () => {
 
     const onScannSuccess = (decodedText, decodedResult) => {
       /* handle success */
+      alert("Decoded Text: ", decodedText);
       console.log("Text:", decodedText);
       console.log("Result:", decodedResult);
 
