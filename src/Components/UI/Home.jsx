@@ -14,8 +14,8 @@ function Home() {
         >
           Generate QR-code
         </button> */}
-        <Button route={"/createQR"}>Create QR-code</Button>
         <Button route={"/scanQR"}>Scan QR-code</Button>
+        <Button route={"/createQR"}>Create QR-code</Button>
         {/* <button
           className="bg-blue-800 text-white py-3 px-6 rounded-lg"
           // onClick={clickHandler}
