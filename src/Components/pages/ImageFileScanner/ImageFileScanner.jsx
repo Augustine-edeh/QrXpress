@@ -1,5 +1,6 @@
 import { Html5Qrcode } from "html5-qrcode";
 import { useEffect } from "react";
+import Button from "../../UI/Button";
 function ImageFileScanner() {
   // return <input type="file" id="qr-input-file" accept="image/*" />;
 
@@ -19,7 +20,7 @@ function ImageFileScanner() {
         .scanFile(imageFile, true)
         .then((decodedText) => {
           // success, use decodedText
-          alert("DecodedText: " + decodedText);
+          setTimeout(() => alert("DecodedText: " + decodedText), 2000); // add 2sec delay before alerting decodedText
           console.log(decodedText);
         })
         .catch((err) => {
@@ -30,8 +31,17 @@ function ImageFileScanner() {
   }, []);
   return (
     <>
-      <div id="reader"></div>
-      <input type="file" id="qr-input-file" accept="image/*" capture />
+      <div id="reader" className="flex flex-wrap place-content-center"></div>
+      <input
+        type="file"
+        id="qr-input-file"
+        accept="image/*"
+        capture
+        className="bg-red-300 mx-auto"
+      />
+      <Button route={"/scanQR"} additionalStyles={"mt-5"}>
+        Scan using Camera
+      </Button>
     </>
   );
 }
