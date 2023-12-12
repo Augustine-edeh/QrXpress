@@ -10,11 +10,13 @@ function Home() {
         <button
           className="bg-blue-700 text-white py-3 px-6 rounded-lg hover:shadow-lg 
         focus:opacity-[0.85]  hover:shadow-blue-300 focus:bg-blue-600"
-          onClick={clickHandler}
         >
           Generate QR-code
         </button>
-        <button className="bg-blue-800 text-white py-3 px-6 rounded-lg">
+        <button
+          className="bg-blue-800 text-white py-3 px-6 rounded-lg"
+          onClick={clickHandler}
+        >
           Scan QR-code
         </button>
       </div>
