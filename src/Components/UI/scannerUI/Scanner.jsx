@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { Html5Qrcode } from "html5-qrcode";
+import { Link } from "react-router-dom";
+import Button from "../Button";
 
 const Scanner = () => {
   useEffect(() => {
@@ -33,7 +35,10 @@ const Scanner = () => {
     <section>
       <p>Scan Qr Code</p>
       <div id="reader"></div>
-      <button>Generate QR-code</button>
+      <Button route={"/createQR"}>Create QR-code</Button>
+      <Link to={"/"} className="flex place-content-center">
+        Home
+      </Link>
     </section>
   );
 };
