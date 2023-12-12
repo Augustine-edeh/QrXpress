@@ -30,10 +30,11 @@ const Scanner = () => {
   }, []);
 
   return (
-    <>
-      <p>Scanner Qr Code</p>
-      <div id="reader">dfghf</div>
-    </>
+    <section>
+      <p>Scan Qr Code</p>
+      <div id="reader"></div>
+      <button>Generate QR-code</button>
+    </section>
   );
 };
 
