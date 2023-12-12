@@ -22,6 +22,19 @@ const App = () => {
   // );
   // html5QrcodeScanner.render(onScanSuccess, onScanFailure);
 
+  // || Checking if device is mobile
+  // function isMobile() {
+  //   const regex =
+  //     /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+  //   return regex.test(navigator.userAgent);
+  // }
+  // if (isMobile()) {
+  //   console.log("Mobile device detected");
+  // } else {
+  //   console.log("Desktop device detected");
+  // }
+  // isMobile();
+
   return (
     <div className="bg-gradient-to-bl from-cyan-100 to-blue-200">
       <Header />

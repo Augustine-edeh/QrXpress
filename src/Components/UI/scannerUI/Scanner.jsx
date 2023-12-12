@@ -22,7 +22,7 @@ const Scanner = () => {
 
   return (
     <>
-      <p>Scanner Page</p>
+      <p>Scanner Qr Code</p>
       <div id="reader">dfghf</div>
     </>
   );
