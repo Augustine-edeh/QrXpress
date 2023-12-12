@@ -33,10 +33,20 @@ const Scanner = () => {
 
   return (
     <section>
-      <p>Scan Qr Code</p>
+      <p className="bg-gray-100 text-center rounded mb-2">Scan Qr Code</p>
       <div id="reader"></div>
-      <Button route={"/createQR"}>Create QR-code</Button>
-      <Link to={"/"} className="flex place-content-center">
+      <div className="flex mt-5 gap-3">
+        <Button route={"/scan-image-file"} additionalStyles={""}>
+          Scan Image File
+        </Button>
+        <Button route={"/createQR"} additionalStyles={""}>
+          Create QR-code
+        </Button>
+      </div>
+      <Link
+        to={"/"}
+        className="mt-5 flex place-content-center underline underline-offset-2"
+      >
         Home
       </Link>
     </section>

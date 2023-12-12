@@ -29,7 +29,7 @@ const CreateQR = () => {
           Create QR
         </Button>
       </div>
-      <Button route="/" additionalStyles={"mt-4 w-full"}>
+      <Button route="/scanQR" additionalStyles={"mt-4 w-full"}>
         Scan QR-code
       </Button>
     </section>

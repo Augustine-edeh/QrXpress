@@ -2,8 +2,9 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./Components/UI/Header";
 import Footer from "./Components/UI/Footer";
 import Home from "./Components/pages/home/Home";
-import Scanner from "./Components/pages/scanner/Scanner";
+import Scanner from "./Components/pages/cameraScanner/CameraScanner";
 import CreateQR from "./Components/pages/createQR/CreateQR";
+import ImageFileScanner from "./Components/pages/ImageFileScanner/ImageFileScanner";
 const App = () => {
   // || Checking if device is mobile
   // function isMobile() {
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/scanQR" element={<Scanner />} />
           <Route path="/createQR" element={<CreateQR />} />
+          <Route path="/scan-image-file" element={<ImageFileScanner />} />
         </Routes>
       </main>
       <Footer />
