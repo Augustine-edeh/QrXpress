@@ -36,7 +36,6 @@ function ImageFileScanner() {
         type="file"
         id="qr-input-file"
         accept="image/*"
-        capture
         className="bg-blue-300 mx-auto "
       />
       <Button route={"/scanQR"} additionalStyles={"mt-5"}>
