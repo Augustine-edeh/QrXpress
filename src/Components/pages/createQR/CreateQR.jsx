@@ -1,5 +1,5 @@
 import Button from "../../UI/Button";
-
+import PageTitle from "../../UI/PageTitle";
 const CreateQR = () => {
   const createQrHandler = () => {
     const enteredValue = document.querySelector("#input").value;
@@ -7,7 +7,7 @@ const CreateQR = () => {
   };
   return (
     <section className="">
-      <h1 className="text-center">Create QR-code</h1>
+      <PageTitle>Create Qr-Code</PageTitle>
       <div className="bg-blue-300 h-96 p-3 text-center flex flex-col place-content-center gap-2 rounded">
         <form className="h-5/6 grid place-content-center">
           <p className="text-left">

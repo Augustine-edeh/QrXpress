@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Html5Qrcode } from "html5-qrcode";
 import { Link } from "react-router-dom";
 import Button from "../../UI/Button";
+import PageTitle from "../../UI/PageTitle";
 
 const Scanner = () => {
   useEffect(() => {
@@ -34,7 +35,7 @@ const Scanner = () => {
 
   return (
     <section>
-      <p className="bg-gray-100 text-center rounded mb-2">Scan Qr Code</p>
+      <PageTitle>Scan Qr Code</PageTitle>
       <div id="reader"></div>
       <div className="flex mt-5 gap-3">
         <Button route={"/scan-image-file"} additionalStyles={""}>
