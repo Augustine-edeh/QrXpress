@@ -5,7 +5,7 @@ const CreateQR = () => {
     const enteredValue = document.querySelector("#input").value;
     // alert(enteredValue);
     alert(
-      "Sorry. The this feature has not been implemented.\nDevelopment is on going for this feature and will be ready soon!\n\n\nRegards,"
+      "Sorry. The this feature has not been implemented.\nDevelopment is on going for this feature.\n\n\nPlease check back soon."
     );
   };
   return (
