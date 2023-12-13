@@ -1,4 +1,4 @@
-# QrXpress Documentation
+# QrXpress
 
 ## Overview
 
