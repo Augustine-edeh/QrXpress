@@ -3,7 +3,10 @@ import PageTitle from "../../UI/PageTitle";
 const CreateQR = () => {
   const createQrHandler = () => {
     const enteredValue = document.querySelector("#input").value;
-    alert(enteredValue);
+    // alert(enteredValue);
+    alert(
+      "Sorry. The this feature has not been implemented.\nDevelopment is on going for this feature and will be ready soon!\n\n\nRegards,"
+    );
   };
   return (
     <section className="">
