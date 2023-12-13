@@ -11,7 +11,9 @@ const Scanner = () => {
 
     const onScannSuccess = (decodedText, decodedResult) => {
       /* handle success */
-      alert("Decoded Text: ", decodedText);
+      setTimeout(() => {
+        alert("Decoded Text: " + decodedText);
+      }, 300);
       console.log("Text:", decodedText);
       console.log("Result:", decodedResult);
 
