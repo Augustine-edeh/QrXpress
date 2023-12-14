@@ -22,7 +22,7 @@ const App = () => {
   return (
     <div className="bg-gradient-to-bl from-cyan-100 to-blue-200">
       <Header />
-      <main className="w-screen h-[100dvh] grid place-content-center">
+      <main className="h-[100dvh] grid place-content-center">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/scanQR" element={<Scanner />} />
