@@ -1,8 +1,12 @@
 import Button from "../../UI/Button";
 import PageTitle from "../../UI/PageTitle";
+import { useRef } from "react";
+
 const CreateQR = () => {
+  const enteredValueRef = useRef();
+
   const createQrHandler = () => {
-    const enteredValue = document.querySelector("#input").value;
+    const enteredValue = enteredValueRef.current.value;
     // alert(enteredValue);
     alert(
       "Sorry. The this feature has not been implemented.\nDevelopment is on going for this feature.\n\n\nPlease check back soon."
@@ -25,6 +29,7 @@ const CreateQR = () => {
             cols="29"
             rows="10"
             className="resize-none rounded p-4 my-2 outline-double outline-1 focus:outline-green-700"
+            ref={enteredValueRef}
           />
           {/* <input type="textarea" id="input" className="h-10" /> */}
         </form>
