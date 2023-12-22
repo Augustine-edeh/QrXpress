@@ -1,7 +1,13 @@
 import Button from "../UI/Button";
-const CreatedQR = () => {
-  const file =
-    "https://api.qrserver.com/v1/create-qr-code/?data=testing_My_QRcode_scanner_Projesct!!!&amp;size=100x100";
+import { useLocation } from "react-router-dom";
+const CreatedQR = (props) => {
+  const { state } = useLocation();
+  const { enteredValue } = state; // Read values passed on state
+  console.log(enteredValue);
+  // const { data } = props.location.state;
+  // console.log(data);
+
+  const file = `https://api.qrserver.com/v1/create-qr-code/?data=${enteredValue}&amp;size=100x100;`;
 
   async function downloadHandler() {
     // const file =

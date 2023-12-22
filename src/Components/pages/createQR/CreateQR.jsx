@@ -6,16 +6,43 @@ import { useNavigate } from "react-router-dom";
 const CreateQR = () => {
   const [routeName, setRouteName] = useState("");
 
-  const condition = true;
   const enteredValueRef = useRef();
   const navigate = useNavigate();
+  // const history = useHistory();
+  const data = { name: "John", age: 30 };
 
   const createQrHandler = () => {
     const enteredValue = enteredValueRef.current.value;
-
     if (enteredValue.trim().length > 0) {
       console.log("Yesterday!");
-      setRouteName("/output"); // Save the route to state
+      setRouteName("/output"); // Saving the route to state
+      // history.push("/output", { data });
+
+      // // Sending page
+      // import { useHistory } from "react-router-dom";
+
+      // function MyComponent() {
+      //   // const history = useHistory();
+      //   const data = { name: "John", age: 30 };
+
+      //   function handleClick() {
+      //     history.push("/my-page", { data });
+      //   }
+
+      //   return <button onClick={handleClick}>Go to My Page</button>;
+      // }
+
+      // // Receiving page
+      // function MyPage(props) {
+      //   const { data } = props.location.state;
+
+      //   return (
+      //     <div>
+      //       <p>Name: {data.name}</p>
+      //       <p>Age: {data.age}</p>
+      //     </div>
+      //   );
+      // }
 
       // update enteredValue context
     } else {
@@ -27,9 +54,11 @@ const CreateQR = () => {
   useEffect(() => {
     // Use the saved route from state to navigate
     if (routeName) {
-      navigate(routeName);
+      navigate(routeName, {
+        state: { enteredValue: enteredValueRef.current.value },
+      });
     }
-  }, [routeName, navigate]);
+  }, [routeName, navigate, data]);
 
   return (
     <section className="">
