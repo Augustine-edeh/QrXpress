@@ -5,6 +5,7 @@ import Home from "./Components/pages/home/Home";
 import Scanner from "./Components/pages/cameraScanner/CameraScanner";
 import CreateQR from "./Components/pages/createQR/CreateQR";
 import ImageFileScanner from "./Components/pages/ImageFileScanner/ImageFileScanner";
+import CreatedQR from "./Components/CreatedQR/CreatedQR";
 const App = () => {
   // || Checking if device is mobile
   // function isMobile() {
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/scanQR" element={<Scanner />} />
           <Route path="/createQR" element={<CreateQR />} />
           <Route path="/scan-image-file" element={<ImageFileScanner />} />
+          <Route path="/output" element={<CreatedQR />} />
         </Routes>
       </main>
       <Footer />
