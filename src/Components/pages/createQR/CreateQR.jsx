@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const CreateQR = () => {
-  const [routeName, setRouteName] = useState("");
+  const [targetRoute, setTargetRoute] = useState("");
 
   const enteredValueRef = useRef();
   const navigate = useNavigate();
@@ -12,8 +12,7 @@ const CreateQR = () => {
   const createQrHandler = () => {
     const enteredValue = enteredValueRef.current.value;
     if (enteredValue.trim().length > 0) {
-      console.log("Yesterday!");
-      setRouteName("/output"); // Saving the route to state
+      setTargetRoute("/output"); // Saving the route to state
     } else {
       alert("Enter valid text");
       // display a passive (validation) error message UI 'Enter a valid text'
@@ -22,12 +21,12 @@ const CreateQR = () => {
 
   useEffect(() => {
     // Use the saved route from state to navigate
-    if (routeName) {
-      navigate(routeName, {
+    if (targetRoute) {
+      navigate(targetRoute, {
         state: { enteredValue: enteredValueRef.current.value },
       });
     }
-  }, [routeName, navigate]);
+  }, [targetRoute, navigate]);
 
   return (
     <section className="">

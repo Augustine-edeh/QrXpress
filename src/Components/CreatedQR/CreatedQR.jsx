@@ -1,6 +1,6 @@
 import Button from "../UI/Button";
 import { useLocation } from "react-router-dom";
-const CreatedQR = (props) => {
+const CreatedQR = () => {
   const { state } = useLocation();
   const { enteredValue } = state; // Read values passed on state
   console.log(enteredValue);
