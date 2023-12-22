@@ -1,13 +1,33 @@
 import Button from "../../UI/Button";
 import PageTitle from "../../UI/PageTitle";
+import { useRef, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 const CreateQR = () => {
+  const [targetRoute, setTargetRoute] = useState("");
+
+  const enteredValueRef = useRef();
+  const navigate = useNavigate();
+
   const createQrHandler = () => {
-    const enteredValue = document.querySelector("#input").value;
-    // alert(enteredValue);
-    alert(
-      "Sorry. The this feature has not been implemented.\nDevelopment is on going for this feature.\n\n\nPlease check back soon."
-    );
+    const enteredValue = enteredValueRef.current.value;
+    if (enteredValue.trim().length > 0) {
+      setTargetRoute("/output"); // Saving the route to state
+    } else {
+      alert("Enter valid text");
+      // display a passive (validation) error message UI 'Enter a valid text'
+    }
   };
+
+  useEffect(() => {
+    // Use the saved route from state to navigate
+    if (targetRoute) {
+      navigate(targetRoute, {
+        state: { enteredValue: enteredValueRef.current.value },
+      });
+    }
+  }, [targetRoute, navigate]);
+
   return (
     <section className="">
       <PageTitle>Create Qr-Code</PageTitle>
@@ -25,10 +45,10 @@ const CreateQR = () => {
             cols="29"
             rows="10"
             className="resize-none rounded p-4 my-2 outline-double outline-1 focus:outline-green-700"
+            ref={enteredValueRef}
           />
-          {/* <input type="textarea" id="input" className="h-10" /> */}
         </form>
-        <Button additionalStyles={"h-1/6"} onCreateQR={createQrHandler}>
+        <Button onCreateQR={createQrHandler} additionalStyles={"h-1/6"}>
           Create QR
         </Button>
       </div>

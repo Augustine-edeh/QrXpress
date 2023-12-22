@@ -8,6 +8,9 @@ function Button({ children, route, additionalStyles, onClick, onCreateQR }) {
       // Check if onCreateQR is passed a prop before calling it
       onCreateQR();
     }
+    if (typeof onClick === "function") {
+      onClick();
+    }
     navigate(route);
   };
 
