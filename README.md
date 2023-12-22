@@ -2,7 +2,7 @@
 
 ## Overview
 
-**QrXpress** is a React project that leverages the `html5-qrcode` library (version 2.1.5) for QR code generation and scanning. This web application provides a solution for scanning QR codes using your device's camera, scanning from local file selection, and generating personalized QR codes.
+**QrXpress** is a React project that leverages the `html5-qrcode` library (version 2.1.5) for QR code scanning and the `goqr` Api for personalized QR code generation. This web application provides a solution for scanning QR codes using your device's camera, scanning from local file selection, and generating personalized QR codes.
 
 - **Live Link:** [QrXpress](https://qr-xpress.vercel.app)
 
@@ -18,7 +18,7 @@ The application provides the ability to scan QR codes from locally selected file
 
 ### 3. Personalized QR Code Generation
 
-QrXpress uses the `html5-qrcode` library for generating personalized QR codes. Users can input custom data, and the application dynamically generates QR codes based on this input.
+QrXpress uses the `goqr` Api for generating personalized QR codes. Users can input custom data, and the application dynamically generates QR codes based on this input.
 
 ## Technologies Used
 
@@ -27,6 +27,7 @@ QrXpress uses the `html5-qrcode` library for generating personalized QR codes. U
 - **ViteJS:** A fast development server and build tool that enhances the React development experience. It provides features like hot module replacement (HMR) for faster development.
 - **Tailwind CSS:** A utility-first CSS framework used for styling. It allows for rapid development and easy customization.
 - **html5-qrcode (v2.1.5):** A library for QR code generation and scanning.
+- **goqr API:** Used for generating personalized QR codes. Users can input custom data, and the application dynamically generates QR codes based on this input.
 
 ## Inspiration
 
