@@ -4,19 +4,13 @@ const CreatedQR = (props) => {
   const { state } = useLocation();
   const { enteredValue } = state; // Read values passed on state
   console.log(enteredValue);
-  // const { data } = props.location.state;
-  // console.log(data);
 
   const file = `https://api.qrserver.com/v1/create-qr-code/?data=${enteredValue}&amp;size=100x100;`;
 
   async function downloadHandler() {
-    // const file =
-    //   "https://api.qrserver.com/v1/create-qr-code/?data=testing_My_QRcode_scanner_Projesct&amp;size=100x100";
     const image = await fetch(file);
     const imageBlog = await image.blob();
     const imageURL = URL.createObjectURL(imageBlog);
-
-    // console.log(imageURL);
 
     const link = document.createElement("a");
     link.href = imageURL;
