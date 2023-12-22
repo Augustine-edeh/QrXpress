@@ -10,22 +10,13 @@ const CreateQR = () => {
   const enteredValueRef = useRef();
   const navigate = useNavigate();
 
-  // const goBack = () => navigate("/");
   const createQrHandler = () => {
     const enteredValue = enteredValueRef.current.value;
-    // alert(enteredValue);
-    // alert(
-    //   "Sorry. The this feature has not been implemented.\nDevelopment is on going for this feature.\n\n\nPlease check back soon."
-    // );
-    if (enteredValue.trim().length > 0) {
-      // alert(1);
-      if (condition === true) {
-        console.log("Yesterday!");
-        // navigate("/output");
-        setRouteName("/output"); // Save the route to state
 
-        // setRouteName("/output");
-      }
+    if (enteredValue.trim().length > 0) {
+      console.log("Yesterday!");
+      setRouteName("/output"); // Save the route to state
+
       // update enteredValue context
     } else {
       alert("Enter valid text");

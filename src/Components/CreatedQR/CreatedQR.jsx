@@ -31,15 +31,13 @@ const CreatedQR = () => {
           Back
         </Button>
         <img src={file} alt="QR" title="" />
-        <a
+        <button
           onClick={downloadHandler}
-          // href={file}
           className="w-full bg-gray-100 border border-gray-500 mt-5 px-3 py-1"
-          // download="QR-image"
-          allow-downloads
+          allow-downloads="true"
         >
           Download QR
-        </a>
+        </button>
       </div>
     </>
   );
