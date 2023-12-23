@@ -34,7 +34,7 @@ const CreatedQR = () => {
         <button
           onClick={downloadHandler}
           className="w-full bg-gray-100 border border-gray-500 mt-5 px-3 py-1"
-          allow-downloads="true"
+          // allow-downloads="true"
         >
           Download QR
         </button>
