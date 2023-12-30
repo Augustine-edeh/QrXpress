@@ -21,9 +21,9 @@ const App = () => {
   // isMobile();
 
   return (
-    <div className="bg-gradient-to-bl from-cyan-100 to-blue-200">
+    <div className="h-screen bg-gradient-to-bl from-cyan-100 to-blue-200">
       <Header />
-      <main className="h-[100dvh] grid place-content-center">
+      <main className="h-full grid place-content-center">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/scanQR" element={<Scanner />} />

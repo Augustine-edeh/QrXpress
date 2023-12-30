@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="bg-transparent flex place-content-center py-5">
+    <footer className="fixed bottom-0 right-0 left-0 bg-transparent flex place-content-center py-5">
       <p>
         Built with{" "}
         <a
