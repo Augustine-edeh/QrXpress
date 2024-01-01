@@ -32,7 +32,7 @@ const App = () => {
           <Route path="/createQR" element={<CreateQR />} />
           <Route path="/scan-image-file" element={<ImageFileScanner />} />
           <Route path="/output" element={<CreatedQR />} />
-          <Route path="/modal" element={<Modal />} />
+          <Route path="/result" element={<Modal />} />
         </Routes>
       </main>
       <Footer />
