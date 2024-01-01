@@ -107,21 +107,21 @@ const Modal = () => {
           <p className="mt-5">{formattedDate}</p>
         </section>
 
-        <section className="rounded-md w-80 bg-blue-300">
+        <section className="rounded-md w-80">
           <ul className="flex flex-col gap-0.5">
-            <button className="flex w-full gap-3 bg-red-200 justify-between">
+            <button className="flex w-full gap-3 bg-blue-300 justify-between rounded-lg p-3">
               <div className="flex gap-2">
                 <span>{webIcon}</span> <p>Search Web</p>
               </div>
               <p className="">{rightChevronIcon}</p>
             </button>
-            <button className="flex w-full gap-3 bg-red-200 justify-between">
+            <button className="flex w-full gap-3 bg-blue-300 justify-between rounded-lg p-3">
               <div className="flex gap-2">
                 <span>{copyIcon}</span> <p>Copy</p>
               </div>
               <p className="">{rightChevronIcon}</p>
             </button>
-            <button className="flex w-full gap-3 bg-red-200 justify-between">
+            <button className="flex w-full gap-3 bg-blue-300 justify-between rounded-lg p-3">
               <div className="flex gap-2">
                 <span>{shareIcon}</span> <p>Share</p>
               </div>
