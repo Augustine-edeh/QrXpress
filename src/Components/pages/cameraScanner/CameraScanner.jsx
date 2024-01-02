@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 import { Html5Qrcode } from "html5-qrcode";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../../UI/Button";
 import PageTitle from "../../UI/PageTitle";
 
 const Scanner = () => {
+  const navigateTo = useNavigate();
+
   useEffect(() => {
     const html5QrCode = new Html5Qrcode("reader");
     const config = { fps: 10, qrbox: { width: 250, height: 250 } };
@@ -12,10 +14,11 @@ const Scanner = () => {
     const onScannSuccess = (decodedText, decodedResult) => {
       /* handle success */
       setTimeout(() => {
-        alert("Decoded Text: " + decodedText);
+        // alert("Decoded Text: " + decodedText);
+        navigateTo("/result", { state: { decodedText: decodedText } });
       }, 300);
-      console.log("Text:", decodedText);
-      console.log("Result:", decodedResult);
+      // console.log("Text:", decodedText);
+      // console.log("Result:", decodedResult);
 
       //   Stop Scamming and remove Camera  UI
       html5QrCode

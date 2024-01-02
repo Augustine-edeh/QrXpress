@@ -20,7 +20,7 @@ function ImageFileScanner() {
         .scanFile(imageFile, true)
         .then((decodedText) => {
           // success, use decodedText
-          setTimeout(() => alert("DecodedText: " + decodedText), 2000); // add 2sec delay before alerting decodedText
+          setTimeout(() => alert("DecodedText: " + decodedText), 1000); // add 2sec delay before alerting decodedText
           console.log(decodedText);
         })
         .catch((err) => {

@@ -1,4 +1,10 @@
+import { useLocation } from "react-router-dom";
+
 const Modal = () => {
+  const { decodedText } = useLocation().state;
+  // console.log("Hey Bro!!");
+  console.log(decodedText);
+
   const DATE = new Date();
   const monthList = [
     "Jan",
@@ -90,6 +96,20 @@ const Modal = () => {
     </svg>
   );
 
+  // clickHandlers
+  const copyHandler = () => {
+    navigator.clipboard.writeText(decodedText).then(
+      () => {
+        console.log(decodedText);
+        /* Resolved - text copied to clipboard successfully */
+      },
+      () => {
+        console.error("Failed to copy");
+        /* Rejected - text failed to copy to the clipboard */
+      }
+    );
+  };
+
   return (
     <>
       <div className="flex gap-3">
@@ -99,11 +119,7 @@ const Modal = () => {
       <div className="flex flex-col gap-5 mt-5">
         <section className="rounded-md w-80 p-3 bg-blue-300">
           <p className="text-gray-500 mb-3">Decoded Text:</p>
-          <p className="p-0 md:text-lg">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam
-            ullam nulla voluptate reiciendis. Provident, cupiditate nisi neque
-            voluptatem enim.
-          </p>
+          <p className="p-0 md:text-lg">{decodedText}</p>
           <p className="mt-5">{formattedDate}</p>
         </section>
 
@@ -115,7 +131,10 @@ const Modal = () => {
               </div>
               <p className="">{rightChevronIcon}</p>
             </button>
-            <button className="flex w-full gap-3 bg-blue-300 justify-between rounded-lg p-3">
+            <button
+              onClick={copyHandler}
+              className="flex w-full gap-3 bg-blue-300 justify-between rounded-lg p-3"
+            >
               <div className="flex gap-2">
                 <span>{copyIcon}</span> <p>Copy</p>
               </div>
