@@ -1,9 +1,10 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Modal = () => {
+  const navigateTo = useNavigate();
   const { decodedText } = useLocation().state;
   // console.log("Hey Bro!!");
-  console.log(decodedText);
+  // console.log(decodedText);
 
   const DATE = new Date();
   const monthList = [
@@ -96,11 +97,28 @@ const Modal = () => {
     </svg>
   );
 
+  const backIcon = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="w-6 h-6"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+      />
+    </svg>
+  );
+
   // clickHandlers
   const copyHandler = () => {
     navigator.clipboard.writeText(decodedText).then(
       () => {
-        console.log(decodedText);
+        console.log("Result Copied!");
         /* Resolved - text copied to clipboard successfully */
       },
       () => {
@@ -112,9 +130,11 @@ const Modal = () => {
 
   return (
     <>
-      <div className="flex gap-3">
-        <button className="outline outline-red-200">{"<--"}</button>
-        <span>Result</span>
+      <div className="flex gap-5 items-center bg-blue-300 rounded">
+        <button className="p-2" onClick={() => navigateTo("/")}>
+          {backIcon}
+        </button>
+        <span className="text-xl">Result</span>
       </div>
       <div className="flex flex-col gap-5 mt-5">
         <section className="rounded-md w-80 p-3 bg-blue-300">
