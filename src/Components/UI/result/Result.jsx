@@ -1,4 +1,11 @@
-const Modal = () => {
+import { useLocation, useNavigate } from "react-router-dom";
+
+const Result = () => {
+  const navigateTo = useNavigate();
+  const { decodedText } = useLocation().state;
+  // console.log("Hey Bro!!");
+  // console.log(decodedText);
+
   const DATE = new Date();
   const monthList = [
     "Jan",
@@ -90,24 +97,53 @@ const Modal = () => {
     </svg>
   );
 
+  const backIcon = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="w-6 h-6"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+      />
+    </svg>
+  );
+
+  // clickHandlers
+  const copyHandler = () => {
+    navigator.clipboard.writeText(decodedText).then(
+      () => {
+        console.log("Result Copied!");
+        /* Resolved - text copied to clipboard successfully */
+      },
+      () => {
+        console.error("Failed to copy");
+        /* Rejected - text failed to copy to the clipboard */
+      }
+    );
+  };
+
   return (
-    <>
-      <div className="flex gap-3">
-        <button className="outline outline-red-200">{"<--"}</button>
-        <span>Result</span>
+    <div className="bg-blue-400 p-2 rounded-xl">
+      <div className="flex gap-5 items-center bg-blue-300 rounded">
+        <button className="p-2" onClick={() => navigateTo("/")}>
+          {backIcon}
+        </button>
+        <span className="text-xl">Result</span>
       </div>
-      <div className="flex flex-col gap-5 mt-5">
-        <section className="rounded-md w-80 p-3 bg-blue-300">
+      <div className="flex flex-col gap-5 mt-5 min-w-[20rem]">
+        <section className="rounded-md p-3 bg-blue-300 min-w-fit">
           <p className="text-gray-500 mb-3">Decoded Text:</p>
-          <p className="p-0 md:text-lg">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam
-            ullam nulla voluptate reiciendis. Provident, cupiditate nisi neque
-            voluptatem enim.
-          </p>
+          <p className="p-0 md:text-lg">{decodedText}</p>
           <p className="mt-5">{formattedDate}</p>
         </section>
 
-        <section className="rounded-md w-80">
+        <section className="rounded-md">
           <ul className="flex flex-col gap-0.5">
             <button className="flex w-full gap-3 bg-blue-300 justify-between rounded-lg p-3">
               <div className="flex gap-2">
@@ -115,7 +151,10 @@ const Modal = () => {
               </div>
               <p className="">{rightChevronIcon}</p>
             </button>
-            <button className="flex w-full gap-3 bg-blue-300 justify-between rounded-lg p-3">
+            <button
+              onClick={copyHandler}
+              className="flex w-full gap-3 bg-blue-300 justify-between rounded-lg p-3"
+            >
               <div className="flex gap-2">
                 <span>{copyIcon}</span> <p>Copy</p>
               </div>
@@ -130,8 +169,8 @@ const Modal = () => {
           </ul>
         </section>
       </div>
-    </>
+    </div>
   );
 };
 
-export default Modal;
+export default Result;
