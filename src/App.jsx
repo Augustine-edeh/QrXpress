@@ -6,7 +6,7 @@ import Scanner from "./Components/pages/cameraScanner/CameraScanner";
 import CreateQR from "./Components/pages/createQR/CreateQR";
 import ImageFileScanner from "./Components/pages/ImageFileScanner/ImageFileScanner";
 import CreatedQR from "./Components/CreatedQR/CreatedQR";
-import Modal from "./Components/UI/modal/Modal";
+import Modal from "./Components/UI/result/Result";
 
 const App = () => {
   // || Checking if device is mobile

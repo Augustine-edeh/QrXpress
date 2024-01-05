@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 
-const Modal = () => {
+const Result = () => {
   const navigateTo = useNavigate();
   const { decodedText } = useLocation().state;
   // console.log("Hey Bro!!");
@@ -129,21 +129,21 @@ const Modal = () => {
   };
 
   return (
-    <>
+    <div className="bg-blue-400 p-2 rounded-xl">
       <div className="flex gap-5 items-center bg-blue-300 rounded">
         <button className="p-2" onClick={() => navigateTo("/")}>
           {backIcon}
         </button>
         <span className="text-xl">Result</span>
       </div>
-      <div className="flex flex-col gap-5 mt-5">
-        <section className="rounded-md w-80 p-3 bg-blue-300">
+      <div className="flex flex-col gap-5 mt-5 min-w-[20rem]">
+        <section className="rounded-md p-3 bg-blue-300 min-w-fit">
           <p className="text-gray-500 mb-3">Decoded Text:</p>
           <p className="p-0 md:text-lg">{decodedText}</p>
           <p className="mt-5">{formattedDate}</p>
         </section>
 
-        <section className="rounded-md w-80">
+        <section className="rounded-md">
           <ul className="flex flex-col gap-0.5">
             <button className="flex w-full gap-3 bg-blue-300 justify-between rounded-lg p-3">
               <div className="flex gap-2">
@@ -169,8 +169,8 @@ const Modal = () => {
           </ul>
         </section>
       </div>
-    </>
+    </div>
   );
 };
 
-export default Modal;
+export default Result;

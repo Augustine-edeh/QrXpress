@@ -1,8 +1,12 @@
 import { Html5Qrcode } from "html5-qrcode";
 import { useEffect } from "react";
 import Button from "../../UI/Button";
+import { useNavigate } from "react-router-dom";
+
 function ImageFileScanner() {
   // return <input type="file" id="qr-input-file" accept="image/*" />;
+
+  const navigateTo = useNavigate();
 
   useEffect(() => {
     const html5QrCode = new Html5Qrcode("reader");
@@ -20,7 +24,10 @@ function ImageFileScanner() {
         .scanFile(imageFile, true)
         .then((decodedText) => {
           // success, use decodedText
-          setTimeout(() => alert("DecodedText: " + decodedText), 1000); // add 2sec delay before alerting decodedText
+          // setTimeout(() => alert("DecodedText: " + decodedText), 1000); // add 2sec delay before alerting decodedText
+
+          navigateTo("/result", { state: { decodedText: decodedText } });
+
           console.log(decodedText);
         })
         .catch((err) => {
